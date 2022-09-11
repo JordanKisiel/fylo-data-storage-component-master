@@ -26,13 +26,13 @@ body{
     align-items: center;
     height: 100vh;
     background-image: url("images/bg-mobile.png");
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size:cover;
 }
 
 main{
     display: grid;
-    grid-auto-columns: 1fr;
+    grid-template-rows: 55% 45%;
     min-width: 20.5rem;
     gap: 1rem;
     margin: auto 1.5rem;
@@ -67,12 +67,14 @@ button{
 }
 
 .storage-container{
+    position: relative;
     background-color: var(--dark-blue);
     padding: 1.8rem;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .storage-container p{
@@ -133,7 +135,8 @@ button{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: -4rem;
+    position: absolute;
+    bottom: -2rem;
     background-color: var(--pale-blue);
     padding: 0.85rem 1.65rem;
     border-radius: 10px;
@@ -163,4 +166,50 @@ footer{
 
 .attribution a { 
     color: var(--pale-blue); 
+}
+
+/* desktop styles */
+@media only screen and (min-width: 800px){
+    body{
+        background-color: var(--very-dark-blue);
+        background-image: url("images/bg-desktop.png");
+        background-size: 112% 50%; /* image gets streched but I don't know of a better way to handle this situation */
+        background-position: 0% 100%;
+    }
+
+    main{
+        grid-template-columns: 40% 60%;
+        grid-template-rows: none;
+        min-width: 60%;
+        gap: 2rem;
+        margin: auto 1.5rem;
+    }
+
+    .storage-container{
+        position: relative;
+        margin-top: 3rem;
+        padding: 1.8rem;
+        align-items: flex-start;
+    }
+
+    .storage-remaining{
+        position: absolute;
+        bottom: 8rem;
+        right: 2rem;
+    }
+
+    /* triangle for speech bubble effect */
+    .storage-remaining:after{
+        content: '';
+        position: absolute;
+        right: 0rem;
+        top: 3rem;
+        border-width: 1.5rem 1.5rem 1.5rem 0px;
+        border-style: solid;
+        border-color: transparent var(--pale-blue);
+    }
+
+    .max-and-min{
+        margin-bottom: 0rem;
+    }
 }
