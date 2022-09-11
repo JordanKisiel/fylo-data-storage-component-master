@@ -5,28 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
   
   <title>Frontend Mentor | Fylo data storage component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <main>
-    <div>
-      <img src="images/logo.svg" alt="Fylo logo">
-      <button></button>
-      <button></button>
-      <button></button>
+    <div class="task-container">
+      <img class="logo" src="images/logo.svg" alt="Fylo logo">
+      <div class="button-container">
+        <button class="file">
+          <img src="images/icon-document.svg" alt="file icon">
+        </button>
+        <button class="folder">
+          <img src="images/icon-folder.svg" alt="folder icon">
+        </button>
+        <button class="upload">
+          <img src="images/icon-upload.svg" alt="upload icon">
+        </button>
+      </div>
     </div>
-    <div>
-      <label for="storage-meter">You&apos;ve used <span>815 GB</span> of your storage</label>
-      <meter id="storage-meter" min="0" max="1000" value="815"></meter>
-      <div><span>0 GB</span><span>1000 GB</span></div>
-      <div><span>185 </span>GB Left</div>
+    <div class="storage-container">
+      <p>
+        You&apos;ve used <span>815 GB</span> of your storage
+      </p>
+      <div class="meter">
+        <span>
+          <span></span>
+        </span>
+      </div>
+      <div class="max-and-min"><span class="min">0 GB</span><span class="max">1000 GB</span></div>
+      <div class="storage-remaining">
+        <span>185 </span>GB Left
+      </div>
     </div>
   </main>
   <footer>
